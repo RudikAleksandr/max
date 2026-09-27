@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70" width="70" height="70">
+  <style>
+    .logo {
+      fill: #d0d0d0;
+    }
+
+    .pulse,
+    .shine {
+      transform-box: view-box;
+      transform-origin: 0 0;
+      animation-duration: 3.0167s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+
+    .pulse {
+      animation-name: pulse;
+    }
+
+    .shine {
+      animation-name: shine;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: translate(34.833px, 35px) scale(4.66667);
+        animation-timing-function: cubic-bezier(0.699, 0, 0.373, 1);
+      }
+      8.84% {
+        transform: translate(34.833px, 35px) scale(5.23333);
+        animation-timing-function: cubic-bezier(0.221, 0, 0.667, 1);
+      }
+      22.1% {
+        transform: translate(34.833px, 35px) scale(4.66667);
+      }
+      49.72% {
+        transform: translate(34.833px, 35px) scale(4.66667);
+        animation-timing-function: cubic-bezier(0.699, 0, 0.373, 1);
+      }
+      58.56% {
+        transform: translate(34.833px, 35px) scale(5.23333);
+        animation-timing-function: cubic-bezier(0.221, 0, 0.667, 1);
+      }
+      71.82% {
+        transform: translate(34.833px, 35px) scale(4.66667);
+      }
+      100% {
+        transform: translate(34.833px, 35px) scale(4.66667);
+      }
+    }
+
+    @keyframes shine {
+      0% {
+        transform: translate(-33.023px, 67.032px);
+        opacity: 0.75;
+        animation-timing-function: cubic-bezier(0.33, 0, 0.25, 1);
+      }
+      16.57% {
+        transform: translate(106.977px, 0.366px);
+        opacity: 0.75;
+      }
+      16.58% {
+        transform: translate(106.977px, 0.366px);
+        opacity: 0;
+      }
+      16.59% {
+        transform: translate(-33.023px, 67.032px);
+        opacity: 0;
+      }
+      49.71% {
+        transform: translate(-33.023px, 67.032px);
+        opacity: 0;
+      }
+      49.72% {
+        transform: translate(-33.023px, 67.032px);
+        opacity: 0.75;
+        animation-timing-function: cubic-bezier(0.33, 0, 0.25, 1);
+      }
+      66.3% {
+        transform: translate(106.977px, 0.366px);
+        opacity: 0.75;
+      }
+      66.31% {
+        transform: translate(106.977px, 0.366px);
+        opacity: 0;
+      }
+      66.32% {
+        transform: translate(-33.023px, 67.032px);
+        opacity: 0;
+      }
+      100% {
+        transform: translate(-33.023px, 67.032px);
+        opacity: 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .pulse {
+        animation: none;
+        transform: translate(34.833px, 35px) scale(4.66667);
+      }
+
+      .shine {
+        display: none;
+      }
+    }
+  </style>
+  <defs>
+    <path
+      id="logo"
+      d="M6.417 .018C6.417-3.535 3.643-6.417 .105-6.417C-3.433-6.417-6.417-3.669-6.417-.017C-6.417 1.514-6.137 2.568-5.886 3.515C-5.681 4.289-5.493 4.991-5.493 5.825C-5.407 6.888-3.544 6.342-2.816 5.563C-2.762 5.505-2.672 5.492-2.607 5.538C-1.661 6.21-1.073 6.381 .139 6.381C3.555 6.381 6.417 3.572 6.417 .018ZM-3.074-.339C-2.785-2.169-1.475-3.338 .204-3.25C1.928-3.159 3.306-1.647 3.216 .083C3.126 1.813 1.598 3.168-.126 3.077C-.65 3.049-1.126 2.856-1.546 2.598C-1.605 2.562-1.681 2.569-1.732 2.617C-2.001 2.872-2.372 3.156-2.526 3.117C-2.889 3.023-3.313 1.176-3.074-.339Z"
+    />
+    <clipPath id="matte">
+      <use class="pulse" href="#logo" />
+    </clipPath>
+    <filter id="blur" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="5.2" />
+    </filter>
+  </defs>
+  <use class="logo pulse" href="#logo" />
+  <g clip-path="url(#matte)">
+    <g class="shine" filter="url(#blur)">
+      <line
+        x1="-18.823"
+        y1="-57.988"
+        x2="18.823"
+        y2="57.988"
+        stroke="#fff"
+        stroke-width="33.33"
+      />
+    </g>
+  </g>
+</svg>
