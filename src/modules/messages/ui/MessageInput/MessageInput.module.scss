@@ -1,0 +1,21 @@
+@use '@/shared/styles';
+
+.form {
+  display: flex;
+  flex-shrink: 0;
+  align-items: flex-end;
+  width: min(styles.$chat-column-width, 100% - 32px);
+  padding-right: 8px;
+  margin: 0 auto 16px;
+  background: var(--bg-primary);
+  border-radius: 16px;
+  box-shadow: var(--shadow-float);
+
+  &[inert] {
+    visibility: hidden;
+  }
+}
+
+.send {
+  margin-bottom: 8px;
+}

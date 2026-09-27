@@ -1,0 +1,84 @@
+@use '@/shared/styles';
+
+$bubble-max-width: 480px;
+
+.bubble {
+  max-width: min($bubble-max-width, 100% - 48px);
+  font-size: 16px;
+  line-height: 20px;
+  border-radius: 16px;
+
+  &:not(.joinedAbove, :first-child) {
+    margin-top: 12px;
+  }
+}
+
+.incoming {
+  align-self: flex-start;
+  color: var(--text-primary);
+  background: var(--bubble-in);
+
+  &.joinedAbove {
+    border-top-left-radius: 6px;
+  }
+
+  &.joinedBelow {
+    border-bottom-left-radius: 6px;
+  }
+}
+
+.outgoing {
+  align-self: flex-end;
+  max-width: min($bubble-max-width, 100% - 64px);
+  color: var(--bubble-out-text);
+  background: var(--bubble-out);
+
+  &.joinedAbove {
+    border-top-right-radius: 6px;
+  }
+
+  &.joinedBelow {
+    border-bottom-right-radius: 6px;
+  }
+
+  .meta {
+    color: var(--bubble-out-time);
+  }
+}
+
+.text {
+  display: flow-root;
+  padding: 8px 10px 4px;
+  margin: 0;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.meta {
+  float: right;
+  display: flex;
+  gap: 2px;
+  align-items: center;
+  height: 16px;
+  margin: 10px 0 0 4px;
+  font-size: 11px;
+  line-height: 14px;
+  color: var(--text-tertiary);
+  white-space: nowrap;
+}
+
+.status {
+  flex-shrink: 0;
+  color: var(--bubble-out-status);
+}
+
+.failed {
+  color: var(--negative);
+}
+
+.error {
+  @include styles.error-text;
+
+  padding: 0 10px 8px;
+  margin: 0;
+}

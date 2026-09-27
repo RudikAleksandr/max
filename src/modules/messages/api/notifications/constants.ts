@@ -1,0 +1,3 @@
+export const RECEIVE_TIMEOUT_SECONDS = 5
+
+export const RECEIVE_REQUEST_TIMEOUT_MS = 60_000

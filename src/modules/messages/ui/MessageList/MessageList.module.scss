@@ -1,0 +1,46 @@
+@use '@/shared/styles';
+
+$list-padding-top: 16px;
+$message-gap: 4px;
+
+.list {
+  @include styles.scroll-y;
+
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: $message-gap;
+  min-height: 0;
+  padding: $list-padding-top max(16px, (100% - styles.$chat-column-width) / 2)
+    24px;
+}
+
+.hint {
+  @include styles.capsule;
+
+  margin: auto;
+}
+
+.day {
+  display: flex;
+  flex-direction: column;
+  gap: $message-gap;
+}
+
+.date {
+  @include styles.capsule;
+
+  position: sticky;
+  top: 8px - $list-padding-top;
+  z-index: 1;
+  align-self: center;
+  padding: 1px 6px;
+  margin: 4px 0;
+  letter-spacing: 0.15px;
+}
+
+.loader {
+  display: flex;
+  margin: auto;
+  color: var(--icon-tertiary);
+}
