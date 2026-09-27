@@ -1,0 +1,40 @@
+:root {
+  --bg-primary: #fff;
+  --bg-secondary: #f5f7fa;
+
+  --text-primary: #060708;
+  --text-secondary: #060708ad;
+  --text-tertiary: #06070885;
+  --text-inverse: #fff;
+  --icon-tertiary: #0607087a;
+
+  --accent: #007aff;
+  --accent-hover: #479fff;
+  --accent-pressed: #006ee5;
+  --negative: #ff303c;
+  --divider: #0c0d0e0f;
+  --input-bg: #0909090d;
+  --ghost-hover: #0d0d0d0a;
+  --ghost-pressed: #0d0d0d14;
+  --cell-hover: #f6f6f6;
+  --cell-selected: #007aff14;
+
+  --chat-ground-from: #99d5d7;
+  --chat-ground-to: #80bcff;
+  --chat-pattern: #007aff4d;
+  --capsule-bg: #0f8ec285;
+
+  --bubble-in: #fff;
+  --bubble-out: #e9fdff;
+  --bubble-out-text: #011c29;
+  --bubble-out-time: #0784b8;
+  --bubble-out-status: #0f8ec2;
+
+  --shadow-float: 0 4px 16px #00000014, 0 0 2px #00000014;
+  --shadow-card: 0 4px 24px #00000014;
+  --stroke-card: #0000001a;
+
+  --font:
+    -apple-system, BlinkMacSystemFont, 'Roboto', system-ui, Avenir, Helvetica,
+    Arial, sans-serif;
+}

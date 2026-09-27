@@ -1,0 +1,76 @@
+@use 'variables';
+
+@mixin single-column {
+  @media (max-width: variables.$single-column-max-width) {
+    @content;
+  }
+}
+
+@mixin hover {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin scroll-y {
+  overflow-y: auto;
+  overscroll-behavior: none;
+}
+
+@mixin centered-page {
+  display: grid;
+  place-items: center;
+  min-height: 100%;
+  padding: 24px;
+}
+
+@mixin card {
+  padding: 32px;
+  background: var(--bg-primary);
+  border: 1px solid var(--stroke-card);
+  border-radius: 28px;
+  box-shadow: var(--shadow-card);
+}
+
+@mixin capsule {
+  padding: 4px 10px;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--text-inverse);
+  background: var(--capsule-bg);
+  border-radius: 10px;
+  backdrop-filter: blur(25px);
+}
+
+@mixin page-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+@mixin error-text {
+  font-size: 13px;
+  line-height: 16px;
+  color: var(--negative);
+}
+
+@mixin field-invalid {
+  box-shadow: inset 0 0 0 1px var(--negative);
+}
+
+@mixin text-input {
+  caret-color: var(--accent);
+
+  &::placeholder {
+    color: var(--text-tertiary);
+  }
+}
