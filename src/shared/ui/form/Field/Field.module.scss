@@ -1,0 +1,17 @@
+@use '@/shared/styles';
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 13px;
+  line-height: 16px;
+  color: var(--text-secondary);
+}
+
+.error {
+  @include styles.error-text;
+}

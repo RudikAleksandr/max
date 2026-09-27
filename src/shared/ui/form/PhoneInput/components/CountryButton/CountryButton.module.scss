@@ -1,0 +1,19 @@
+.country {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  height: 100%;
+  padding: 0 4px 0 12px;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  border-radius: 12px 0 0 12px;
+
+  &[aria-expanded='true'] .chevron {
+    transform: rotate(180deg);
+  }
+}
+
+.chevron {
+  transition: transform 0.15s;
+}

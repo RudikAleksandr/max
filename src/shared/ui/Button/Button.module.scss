@@ -1,0 +1,83 @@
+@use '@/shared/styles';
+
+.button {
+  display: inline-flex;
+  flex-shrink: 0;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  border: 0;
+  transition:
+    background-color 0.15s,
+    opacity 0.15s;
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.5;
+  }
+}
+
+.xsmall {
+  height: 32px;
+  padding: 0 12px;
+  font-size: 14px;
+  line-height: 20px;
+  border-radius: 8px;
+}
+
+.small {
+  height: 40px;
+  padding: 0 12px;
+  font-size: 16px;
+  line-height: 20px;
+  border-radius: 12px;
+}
+
+.medium {
+  height: 52px;
+  padding: 0 20px;
+  font-size: 17px;
+  line-height: 20px;
+  border-radius: 16px;
+}
+
+.primary,
+.icon {
+  color: var(--text-inverse);
+  background: var(--accent);
+
+  &:not(:disabled) {
+    @include styles.hover {
+      background: var(--accent-hover);
+    }
+
+    &:active {
+      background: var(--accent-pressed);
+    }
+  }
+}
+
+.ghost {
+  color: var(--accent);
+  background: transparent;
+
+  &:not(:disabled) {
+    @include styles.hover {
+      background: var(--ghost-hover);
+    }
+
+    &:active {
+      background: var(--ghost-pressed);
+    }
+  }
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border-radius: 50%;
+}
