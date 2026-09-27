@@ -1,0 +1,107 @@
+@use '@/shared/styles';
+
+.page {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  grid-template-columns: styles.$sidebar-width minmax(0, 1fr);
+  height: 100%;
+
+  @include styles.single-column {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.banner {
+  grid-row: 1;
+  grid-column: 1 / -1;
+  padding: 12px 16px;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--divider);
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  grid-row: 2;
+  min-height: 0;
+  background: var(--bg-primary);
+  border-right: 1px solid var(--divider);
+
+  @include styles.single-column {
+    border-right: 0;
+
+    .chatOpen & {
+      display: none;
+    }
+  }
+}
+
+.sidebarHeader {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+  height: styles.$header-height;
+  padding: 16px 4px 12px 16px;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.title {
+  @include styles.page-title;
+
+  transform-origin: left center;
+
+  .offline & {
+    margin: -3px 0;
+    color: var(--text-secondary);
+    transform: scale(0.8);
+  }
+}
+
+.status {
+  font-size: 11px;
+  line-height: 16px;
+}
+
+.main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  grid-row: 2;
+  min-height: 0;
+  background: linear-gradient(
+    28deg,
+    var(--chat-ground-from) 8%,
+    var(--chat-ground-to) 92%
+  );
+  isolation: isolate;
+
+  &::before {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    content: '';
+    background: var(--chat-pattern);
+    mask-image: url('@/shared/assets/images/chat-pattern.svg');
+    mask-repeat: repeat;
+    mask-position: 50%;
+  }
+
+  @include styles.single-column {
+    .page:not(.chatOpen) & {
+      display: none;
+    }
+  }
+}
+
+.empty {
+  @include styles.capsule;
+
+  margin: auto;
+}
