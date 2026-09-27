@@ -1,0 +1,8 @@
+export const HTTP_STATUS = {
+  BAD_REQUEST: 400,
+  UNAUTHORIZED: 401,
+  REQUEST_TIMEOUT: 408,
+  TOO_MANY_REQUESTS: 429
+} as const
+
+export const MAX_TRANSIENT_RETRIES = 3
